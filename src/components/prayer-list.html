@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../normalize.css" />
+  <link href="prayer-list.css" rel="stylesheet" />
+  <script src="prayer-list.js"></script>
+  <title>Prayer List</title>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>My Prayer Journal</h1>
+      <p class="subtitle">Track prayers, reflect on answers, and stay rooted in Scripture.</p>
+      <button onclick="getRandomScripture()">Get a Random Scripture</button>
+      <div id="scriptureBox" class="scripture-box"></div>
+    </header>
+
+    <main>
+      <div class="card">
+        <h2>Add a Prayer</h2>
+        <form id="prayerForm" onsubmit="addPrayer(event)" class="prayer-form">
+          <textarea id="prayerText" placeholder="Write your prayer..." required></textarea>
+          <input type="text" id="scriptureText" placeholder="Optional: Scripture verse (e.g., John 3:16)" />
+          <label class="answered-checkbox">
+            <input type="checkbox" id="answeredCheck" onchange="toggleAnsweredNote()" />
+            Mark Prayer as Answered
+          </label>
+          <textarea id="answeredNote" placeholder="Answered prayer note..." style="display: none;"></textarea>
+          <button type="submit">➕ Add Prayer</button>
+        </form>
+      </div>
+
+      <section>
+        <h2>Active Prayers</h2>
+        <div id="prayersList" class="prayer-list"></div>
+      </section>
+
+      <section>
+        <h2>Answered Prayers</h2>
+        <div id="answeredPrayers" class="prayer-list"></div>
+      </section>
+
+      <section>
+        <h2>Archived Prayers</h2>
+        <button class="toggle-btn" onclick="toggleArchiveView()">📁 Show/Hide Archive</button>
+        <div id="archivedPrayers" class="prayer-list" style="display:none;"></div>
+      </section>
+
+      <section class="card">
+        <h2>Common Prayers</h2>
+        <ul class="common-prayers">
+          <li onclick="useCommonPrayer(this)">🙏 Lord, help me trust You daily.</li>
+          <li onclick="useCommonPrayer(this)">🕊️ Grant me peace in times of stress.</li>
+          <li onclick="useCommonPrayer(this)">❤️ Please heal and comfort those who are suffering.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

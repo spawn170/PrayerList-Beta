@@ -1,0 +1,192 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f2f4f8;
+  color: #333;
+  padding: 1rem;
+}
+
+/* Layout */
+.app-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 1rem;
+}
+
+/* Cards and Sections */
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+/* Prayer Form */
+.prayer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+textarea,
+input {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-size: 1rem;
+}
+
+#answeredNote {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Buttons */
+button {
+  background-color: #2c7be5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #1b5fbd;
+}
+
+.toggle-btn {
+  background-color: #ccc;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.prayer-entry button {
+  background-color: #eee;
+  color: #333;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Prayer List Display */
+.prayer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.prayer-entry {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.25rem;
+  position: relative;
+}
+
+.prayer-entry p {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.prayer-entry.answered {
+  border-left: 4px solid green;
+  opacity: 0.95;
+}
+
+.prayer-entry.editing {
+  background-color: #fff9e6;
+  border-color: #f0c040;
+}
+
+.answered-note {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #2d662d;
+}
+
+
+/* Answered Checkbox */
+.answered-checkbox,
+.answered-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* Scripture Display */
+.scripture-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f0f4fa;
+  border-radius: 8px;
+  font-style: italic;
+  color: #333;
+}
+
+/* Common Prayers List */
+.common-prayers {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.common-prayers li {
+  background: #f0f4fa;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-left: 4px solid #2c7be5;
+}
+
+.common-prayers li:hover {
+  background: #dce7f9;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
