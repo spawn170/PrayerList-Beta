@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../normalize.css" />
-  <link href="prayer-list.css" rel="stylesheet" />
-  <script src="prayer-list.js"></script>
-  <title>Prayer List</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrayMate</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-container">
+  <div id="app" class="app-container">
+
     <header>
-      <h1>My Prayer Journal</h1>
-      <p class="subtitle">Track prayers, reflect on answers, and stay rooted in Scripture.</p>
-      <button onclick="getRandomScripture()">Get a Random Scripture</button>
-      <div id="scriptureBox" class="scripture-box"></div>
+      <h1>PrayMate</h1>
+      <p class="subtitle">Write your prayers, discover relevant Bible verses, and track which prayers have been answered. Click on a topic to get instant scripture guidance or let the app suggest verses based on your prayer text. Keep your prayers organized, marked, and even archived for future reflection.</p>
     </header>
 
-    <main>
-      <div class="card">
-        <h2>Add a Prayer</h2>
-        <form id="prayerForm" onsubmit="addPrayer(event)" class="prayer-form">
-          <textarea id="prayerText" placeholder="Write your prayer..." required></textarea>
-          <input type="text" id="scriptureText" placeholder="Optional: Scripture verse (e.g., John 3:16)" />
-          <label class="answered-checkbox">
-            <input type="checkbox" id="answeredCheck" onchange="toggleAnsweredNote()" />
-            Mark Prayer as Answered
-          </label>
-          <textarea id="answeredNote" placeholder="Answered prayer note..." style="display: none;"></textarea>
-          <button type="submit">➕ Add Prayer</button>
-        </form>
+    <!-- Prayer Form -->
+    <div class="card prayer-form">
+      <input id="prayerTitle" type="text" placeholder="Prayer title (optional)">
+      <textarea id="prayerText" placeholder="Write your prayer..."></textarea>
+      <input id="prayerTopic" type="text" placeholder="Topic (e.g., peace, healing)">
+
+      <!-- Suggested Verse -->
+      <div id="suggestedVerseBox" class="scripture-box"></div>
+
+      <!-- Common Topics -->
+      <div class="common-topics">
+        <p><strong>Click a topic:</strong></p>
+        <div id="commonTopics" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem;"></div>
       </div>
 
-      <section>
-        <h2>Active Prayers</h2>
-        <div id="prayersList" class="prayer-list"></div>
-      </section>
+      <button id="addPrayerBtn" style="margin-top:1rem;">Add Prayer</button>
+    </div>
 
-      <section>
-        <h2>Answered Prayers</h2>
-        <div id="answeredPrayers" class="prayer-list"></div>
-      </section>
+    <hr>
 
-      <section>
-        <h2>Archived Prayers</h2>
-        <button class="toggle-btn" onclick="toggleArchiveView()">📁 Show/Hide Archive</button>
-        <div id="archivedPrayers" class="prayer-list" style="display:none;"></div>
-      </section>
+    <!-- Active Prayers -->
+    <div class="card">
+      <h2>Active Prayers</h2>
+      <div id="prayersList" class="prayer-list"></div>
+    </div>
 
-      <section class="card">
-        <h2>Common Prayers</h2>
-        <ul class="common-prayers">
-          <li onclick="useCommonPrayer(this)">🙏 Lord, help me trust You daily.</li>
-          <li onclick="useCommonPrayer(this)">🕊️ Grant me peace in times of stress.</li>
-          <li onclick="useCommonPrayer(this)">❤️ Please heal and comfort those who are suffering.</li>
-        </ul>
-      </section>
-    </main>
+    <hr>
+
+    <!-- Archived Prayers -->
+    <div class="card">
+      <h2>Archived Prayers</h2>
+      <div id="archivedPrayers" class="prayer-list"></div>
+    </div>
+
   </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
