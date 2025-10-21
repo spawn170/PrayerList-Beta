@@ -1,5 +1,5 @@
-# PrayerList-Beta
-🙏 Prayer List App
+# Praymate-Beta
+🙏 Praymate App
 
 A simple and powerful web app to help you organize and track your prayers, praise reports, and answered prayers. Designed to encourage consistent prayer, reflection, and gratitude — whether you’re using it personally, with your family, or in a small group or ministry.
 
