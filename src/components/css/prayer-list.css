@@ -94,6 +94,14 @@ button:hover {
   box-shadow: 0 4px 12px rgba(44, 123, 229, 0.3);
 }
 
+  .responsive-img {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
 .prayer-form button {
   margin-top: 0.5rem;
 }
@@ -151,6 +159,28 @@ button:hover {
 .common-topics button:hover {
   background: #d9e6fb;
   transform: translateY(-1px);
+}
+
+.date-added {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.topic-btn {
+  background-color: #e9f5ff;
+  border: 1px solid #0077cc;
+  color: #0077cc;
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.topic-btn:hover {
+  background-color: #0077cc;
+  color: white;
 }
 
 /* Prayer Entry Buttons */
